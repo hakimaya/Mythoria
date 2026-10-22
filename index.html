@@ -2,64 +2,68 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width,intiale-scale=1.0">
+        <meta name="viewport" content="width=device-width, intial-scale=1.0">
         <title>Mythoria</title>
         <link rel="stylesheet" href="style.css">
         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
         <script src="https://unpkg.com/lucide@latest"></script>
+        <script src="script.js" defer></script>
     </head>
     <body>
         <main>
 
-            <header 
-            class="flex items-center justify-between px-[20px] py-[16px] bg-[#0b0712] ">
+            <header class="relative flex items-center justify-between px-[20px] py-[16px] bg-[#0b0712] ">
 
 
-                    <a 
-                    href="index.html">
-                    <img 
-                    src="Mythoria, emblème du compas mystique.png" 
-                    alt="mythorialogo" 
-                    class="w-[100px] md:w-[120px] lg:w-[140px] h-auto block">
+                    <a href="index.html">
+                        <img 
+                        src="Mythoria, emblème du compas mystique.png" 
+                        alt="mythorialogo" 
+                        class="w-[100px] md:w-[120px] lg:w-[140px] h-auto block">
                     </a>
 
 
-                    <button
-                    type="button"
-                    aria-label="Ouvrir le menu"
-                    aria-controls="menu"
-                    aria-expanded="false"
-                    class="lg:hidden text-[#e9c16d] text-[28px] cursor-pointer"
-                    >
-                    ☰
-                    </button>
-
-
-                    <nav 
-                    class="hidden lg:flex items-center gap-[32px] text-white "
+                    <nav
                     id="menu"
-                    >
-                        <a 
-                        class="hover:text-[#e9c16d] transition-colors"
-                        href="#"
-                        >accueil</a>
-                        <a 
-                        class="hover:text-[#e9c16d] transition-colors"
-                        href="#"
-                        >Boutique</a>
-                        <a 
-                        class="hover:text-[#e9c16d] transition-colors"
-                        href="#"
-                        >Ma collection</a>
-                        <a 
-                        class="hover:text-[#e9c16d] transition-colors"
-                        href="#"
-                        >Le jeu</a>
-                        <a 
-                        class="hover:text-[#e9c16d] transition-colors"
-                        href="#"
-                        >A propos</a>
+                    class="hidden absolute top-full left-0 w-full
+                    flex-col gap-5 bg-[#0b0712] p-5 text-white z-50
+                    lg:static lg:flex lg:w-auto lg:flex-row
+                    lg:items-center lg:gap-[32px] lg:p-0">
+                        
+                        <a class="hover:text-[#e9c16d] transition-colors"href="#">accueil</a>
+                        <a class="hover:text-[#e9c16d] transition-colors"href="#">Boutique</a>
+                        <a class="hover:text-[#e9c16d] transition-colors"href="#">Ma collection</a>
+                        <a class="hover:text-[#e9c16d] transition-colors"href="#">Le jeu</a>
+                        <a class="hover:text-[#e9c16d] transition-colors"href="#">A propos</a>
+
                     </nav>
+
+                    <div class="flex items-center gap-4 text-white">
+
+                            <button type="button" aria-label="rechercher" class="cursor-pointer hover:text-[#e9c16d]">
+                                <i data-lucide="search" class="w-[20px] h-[20px]"></i>
+                            </button>
+
+                            <a href="#" aria-label="Mon profil">
+                                <i data-lucide="user-round" class="w-[20px] h-[20px] hover:text-[#e9c16d]"></i>
+                            </a>
+
+                            <a href="#" aria-label="Mon panier">
+                                <i data-lucide="shopping-cart" class="w-[20px] h-[20px] hover:text-[#e9c16d]"></i>
+                            </a>
+
+                            <button
+                            id="menu-toggle"
+                            type="button"
+                            aria-label="Ouvrir le menu"
+                            aria-controls="menu"
+                            aria-expanded="false"
+                            class="lg:hidden text-[#e9c16d] text-[28px] cursor-pointer"
+                            >
+                            ☰
+                            </button>
+
+                    </div>
 
 
             </header>
