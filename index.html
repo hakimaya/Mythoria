@@ -2,12 +2,19 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, intial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Mythoria</title>
         <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
         <script src="https://unpkg.com/lucide@latest"></script>
         <script src="script.js" defer></script>
+        <style type="text/tailwindcss">
+            @theme {
+                --font-title:"Cinzel",serif;
+                --font-body:"Inter", sans-serif;
+            }
+        </style>
     </head>
     <body>
         <main>
@@ -25,12 +32,12 @@
 
                     <nav
                     id="menu"
-                    class="hidden absolute top-full left-0 w-full
+                    class="font-body hidden absolute top-full left-0 w-full
                     flex-col gap-5 bg-[#0b0712] p-5 text-white z-50
                     lg:static lg:flex lg:w-auto lg:flex-row
                     lg:items-center lg:gap-[32px] lg:p-0">
                         
-                        <a class="hover:text-[#e9c16d] transition-colors"href="#">accueil</a>
+                        <a class="hover:text-[#e9c16d] transition-colors"href="#">Accueil</a>
                         <a class="hover:text-[#e9c16d] transition-colors"href="#">Boutique</a>
                         <a class="hover:text-[#e9c16d] transition-colors"href="#">Ma collection</a>
                         <a class="hover:text-[#e9c16d] transition-colors"href="#">Le jeu</a>
@@ -40,16 +47,8 @@
 
                     <div class="flex items-center gap-4 text-white">
 
-                            <button type="button" aria-label="rechercher" class="cursor-pointer hover:text-[#e9c16d]">
-                                <i data-lucide="search" class="w-[20px] h-[20px]"></i>
-                            </button>
-
-                            <a href="#" aria-label="Mon profil">
-                                <i data-lucide="user-round" class="w-[20px] h-[20px] hover:text-[#e9c16d]"></i>
-                            </a>
-
                             <a href="#" aria-label="Mon panier">
-                                <i data-lucide="shopping-cart" class="w-[20px] h-[20px] hover:text-[#e9c16d]"></i>
+                                <i data-lucide="shopping-cart" class="w-[20px] h-[20px] hover:text-[#e9c16d] transition-colors"></i>
                             </a>
 
                             <button
