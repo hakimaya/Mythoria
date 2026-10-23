@@ -10,5 +10,5 @@ menuButton.addEventListener("click", function() {
     menuButton.setAttribute("aria-expanded", String(isOpen));
 });
 
-// Icons
+
 lucide.createIcons();

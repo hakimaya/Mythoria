@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mythoria — Boutique</title>
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+
+    <script src="shop.js" defer></script>
+
+    <style type="text/tailwindcss">
+        @theme {
+            --font-title: "Cinzel", serif;
+            --font-body: "Inter", sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-[#0b0712] text-white font-body">
+
+    <header class="relative flex items-center justify-between px-[20px] py-[16px] bg-[#0b0712] ">
+
+
+                    <a href="index.html">
+                        <img 
+                        src="Mythoria, emblème du compas mystique.png" 
+                        alt="mythorialogo" 
+                        class="w-[100px] md:w-[120px] lg:w-[140px] h-auto block">
+                    </a>
+
+
+                    <nav
+                    id="menu"
+                    class="font-body hidden absolute top-full left-0 w-full
+                    flex-col gap-5 bg-[#0b0712] p-5 text-white z-50
+                    lg:static lg:flex lg:w-auto lg:flex-row
+                    lg:items-center lg:gap-[32px] lg:p-0">
+                        
+                        <a class="hover:text-[#e9c16d] transition-colors"href="index.html">Accueil</a>
+                        <a class="hover:text-[#e9c16d] transition-colors"href="shop.html">Boutique</a>
+                        <a class="hover:text-[#e9c16d] transition-colors"href="#">Ma collection</a>
+                        <a class="hover:text-[#e9c16d] transition-colors"href="#">Le jeu</a>
+                        <a class="hover:text-[#e9c16d] transition-colors"href="#">A propos</a>
+
+                    </nav>
+
+                    <div class="flex items-center gap-4 text-white">
+
+                            <a href="#panier" class="flex items-center gap-2">
+
+                                <i data-lucide="shopping-cart"
+                                class="w-5 h-5 text-white"></i>
+
+                                <span id="nombreArticles"
+                                    class="text-yellow-400">
+                                    0
+                                </span>
+
+                            </a>
+
+                            <button
+                            id="menu-toggle"
+                            type="button"
+                            aria-label="Ouvrir le menu"
+                            aria-controls="menu"
+                            aria-expanded="false"
+                            class="lg:hidden text-[#e9c16d] text-[28px] cursor-pointer"
+                            >
+                            ☰
+                            </button>
+
+                    </div>
+
+
+            </header>
+    <main>
+        
+        <section class="bg-cover bg-center" style="background-image: url('shop-bg.jpg');">
+            <div class="bg-black/65 p-8 md:p-16 text-center">
+                <p class="text-[#e9c16d] mb-3">ENTREZ DANS LA BOUTIQUE</p>
+                <h1 class="font-title text-3xl md:text-5xl text-[#f1d18d] mb-4">
+                    LES BOOSTERS DE MYTHORIA
+                </h1>
+                <p class="text-gray-200">
+                    Quatre packs, mille légendes. Choisissez votre aventure.
+                </p>
+            </div>
+        </section>
+
+        
+        <section class="p-4 md:p-8 lg:p-12">
+            <h2 class="font-title text-2xl text-[#e9c16d] mb-3">Choisissez votre booster</h2>
+            <p class="text-gray-300 mb-8">Découvrez les cartes qui se cachent dans chaque pack.</p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+                
+                <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                    
+                    <div class="bg-[#191321] border border-[#59452d] rounded-lg p-5 text-center flex flex-col">
+                        <img src="beginner-pack.png" alt="Beginner Pack" class="h-64 object-contain mx-auto mb-4">
+                        <h3 class="font-title text-lg text-[#e9c16d] mb-3">Beginner Pack</h3>
+                        <p class="text-sm text-gray-300 mb-3">Un pack conçu pour les nouveaux joueurs avec des cartes communes et quelques cartes plus rares.</p>
+                        <p class="text-sm text-gray-200 mb-2"><strong>5 cartes</strong> par booster</p>
+                        <p class="text-xs text-gray-400 mb-4">Catégories : Créatures, Sorts, Artefacts et Terrains</p>
+                        <p class="text-2xl font-bold text-[#f1d18d] mb-4">29 MAD</p>
+                        <div class="mt-auto">
+                            <label for="quantite1" class="block text-sm mb-2">Quantité</label>
+                            <input id="quantite1" type="number" min="1" value="1" class="w-20 p-2 text-center bg-[#0b0712] border border-[#796342] rounded mb-3">
+                            <button onclick="ajouterAuPanier(1)" class="block w-full bg-[#e9c16d] text-black font-bold p-3 rounded hover:bg-yellow-300">
+                                Ajouter au panier
+                            </button>
+                        </div>
+                    </div>
+
+                    
+                    <div class="bg-[#191321] border border-[#59452d] rounded-lg p-5 text-center flex flex-col">
+                        <img src="legends-pack.png" alt="Summoning of the Legends" class="h-64 object-contain mx-auto mb-4">
+                        <h3 class="font-title text-lg text-[#e9c16d] mb-3">Summoning of the Legends</h3>
+                        <p class="text-sm text-gray-300 mb-3">Un pack premium avec plus de chances d'obtenir des cartes rares, épiques ou légendaires.</p>
+                        <p class="text-sm text-gray-200 mb-2"><strong>5 cartes</strong> par booster</p>
+                        <p class="text-xs text-gray-400 mb-4">Catégories : Toutes les catégories, avec raretés supérieures</p>
+                        <p class="text-2xl font-bold text-[#f1d18d] mb-4">69 MAD</p>
+                        <div class="mt-auto">
+                            <label for="quantite2" class="block text-sm mb-2">Quantité</label>
+                            <input id="quantite2" type="number" min="1" value="1" class="w-20 p-2 text-center bg-[#0b0712] border border-[#796342] rounded mb-3">
+                            <button onclick="ajouterAuPanier(2)" class="block w-full bg-[#e9c16d] text-black font-bold p-3 rounded hover:bg-yellow-300">
+                                Ajouter au panier
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#191321] border border-[#59452d] rounded-lg p-5 text-center flex flex-col">
+                        <img src="dark-pack.png" alt="Dark Summoning" class="h-64 object-contain mx-auto mb-4">
+                        <h3 class="font-title text-lg text-[#e9c16d] mb-3">Dark Summoning</h3>
+                        <p class="text-sm text-gray-300 mb-3">Un booster dédié aux monstres, aux serviteurs des Ténèbres et aux sorts interdits.</p>
+                        <p class="text-sm text-gray-200 mb-2"><strong>5 cartes</strong> par booster</p>
+                        <p class="text-xs text-gray-400 mb-4">Catégories : Créatures des Ténèbres et Sorts obscurs</p>
+                        <p class="text-2xl font-bold text-[#f1d18d] mb-4">49 MAD</p>
+                        <div class="mt-auto">
+                            <label for="quantite3" class="block text-sm mb-2">Quantité</label>
+                            <input id="quantite3" type="number" min="1" value="1" class="w-20 p-2 text-center bg-[#0b0712] border border-[#796342] rounded mb-3">
+                            <button onclick="ajouterAuPanier(3)" class="block w-full bg-[#e9c16d] text-black font-bold p-3 rounded hover:bg-yellow-300">
+                                Ajouter au panier
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#191321] border border-[#59452d] rounded-lg p-5 text-center flex flex-col">
+                        <img src="lucky-pack.png" alt="Lucky Pack" class="h-64 object-contain mx-auto mb-4">
+                        <h3 class="font-title text-lg text-[#e9c16d] mb-3">Lucky Pack</h3>
+                        <p class="text-sm text-gray-300 mb-3">Un booster mystère avec un assortiment aléatoire et une chance de trouver une carte exceptionnelle.</p>
+                        <p class="text-sm text-gray-200 mb-2"><strong>5 cartes</strong> par booster</p>
+                        <p class="text-xs text-gray-400 mb-4">Catégories : Toutes les catégories, tirage surprise</p>
+                        <p class="text-2xl font-bold text-[#f1d18d] mb-4">39 MAD</p>
+                        <div class="mt-auto">
+                            <label for="quantite4" class="block text-sm mb-2">Quantité</label>
+                            <input id="quantite4" type="number" min="1" value="1" class="w-20 p-2 text-center bg-[#0b0712] border border-[#796342] rounded mb-3">
+                            <button onclick="ajouterAuPanier(4)" class="block w-full bg-[#e9c16d] text-black font-bold p-3 rounded hover:bg-yellow-300">
+                                Ajouter au panier
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <aside id="panier" class="bg-[#191321] border border-[#806437] rounded-lg p-6 h-fit lg:sticky lg:top-6">
+                    <h2 class="font-title text-2xl text-[#e9c16d] mb-5">MON PANIER</h2>
+                    <div id="listePanier" class="mb-5">
+                        <p class="text-gray-400">Votre panier est vide.</p>
+                    </div>
+                    <div class="border-t border-[#665034] pt-5">
+                        <div class="flex justify-between items-center font-bold text-lg mb-5">
+                            <span>Total :</span>
+                            <span id="totalPanier" class="text-[#e9c16d]">0 MAD</span>
+                        </div>
+                        <button id="boutonCommander" onclick="validerCommande()" class="bg-[#e9c16d] text-black font-bold p-3 rounded w-full mb-3 hover:bg-yellow-300">
+                            Valider ma commande
+                        </button>
+                        <button onclick="viderPanier()" class="border border-[#806437] text-gray-200 p-3 rounded w-full hover:bg-[#31253a]">
+                            Vider le panier
+                        </button>
+                        <p class="text-xs text-gray-400 mt-4 text-center">Commande de démonstration. Aucun paiement réel.</p>
+                    </div>
+                </aside>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-[#08060c] border-t border-[#493822] p-6 md:p-10">
+        <div class="flex flex-col md:flex-row justify-between gap-6">
+            <div>
+                <p class="font-title text-xl text-[#e9c16d] mb-2">MYTHORIA</p>
+                <p class="text-sm text-gray-400">Collectionnez. Échangez. Écrivez votre légende.</p>
+            </div>
+            <div class="flex flex-wrap gap-5 text-sm text-gray-300">
+                <a href="index.html" class="hover:text-yellow-300">Accueil</a>
+                <a href="shop.html" class="hover:text-yellow-300">Boutique</a>
+                <a href="grimoire.html" class="hover:text-yellow-300">Ma Collection</a>
+            </div>
+        </div>
+        <p class="text-xs text-gray-500 mt-8">© 2026 Mythoria. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
