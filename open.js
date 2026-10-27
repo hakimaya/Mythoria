@@ -39,3 +39,28 @@ const boosters = {
     }
 };
 
+for(let id in boosterachetes)
+{
+    if(boosterachetes[id] > 0 && boosters[id])
+        {
+            let booster = boosters[id];
+            let quantite = boosterachetes[id];
+
+            listboosters.innerHTML += `
+            <div class="bg-[#191321] text-center p-5 rounded">
+
+                <img src="${booster.image}"
+                    alt="${booster.nom}"
+                    class="h-64 max-auto object-contain mb-4">
+                    
+                <h3 class="font-title title-xl text-[#e9c16d] mb-3">
+                    ${booster.nom}
+                </h3>
+
+                <p class="text-gray-300 mb-4">Quantite disponible : ${quantite}</p>
+                <button type="button"
+                class="bg-[#e9c16d] text-[#0b0712] px-6 py-3 rounded hover:bg-[#f5d995]">Ouvrir le booster</button>
+            </div>
+            `;
+        } 
+}
