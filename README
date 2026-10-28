@@ -1,0 +1,180 @@
+# Mythoria
+
+Mythoria est un site de jeu de cartes à collectionner dans un univers dark fantasy.
+
+Le joueur peut acheter des boosters de manière simulée, découvrir des cartes aléatoires, consulter sa collection et composer son deck.
+
+## Technologies utilisées
+
+- HTML5 : structure des pages.
+- Tailwind CSS : mise en forme et responsive.
+- CSS3 : animation des cartes et apparence du grimoire.
+- JavaScript : interactions, panier, tirages et gestion des cartes.
+- LocalStorage : sauvegarde de la progression dans le navigateur.
+- Lucide : icônes.
+- Google Fonts : Cinzel et Inter.
+
+## Fonctionnalités
+
+### Accueil
+
+- Section Hero avec illustration et slogan.
+- Liens vers la boutique et le grimoire.
+- Présentation des quatre catégories de cartes.
+- Présentation des boosters.
+- Mise en avant de cartes légendaires.
+- Navigation responsive avec menu mobile.
+
+### Boutique
+
+Quatre boosters sont disponibles :
+
+| Booster | Prix | Nombre de cartes |
+|---------|------|------------------|
+| Beginner Pack | 29 MAD | 5 |
+| Summoning of the Legends | 69 MAD | 5 |
+| Dark Summoning | 49 MAD | 5 |
+| Lucky Pack | 39 MAD | 5 |
+
+Le joueur peut :
+
+- Sélectionner une quantité et ajouter des boosters au panier.
+- Modifier les quantités dans le panier.
+- Retirer un booster ou vider le panier.
+- Consulter le total actualisé.
+- Retrouver son panier après actualisation.
+- Valider une commande simulée, sans paiement réel.
+
+Après validation, les boosters sont enregistrés dans le stock du joueur. Il est ensuite redirigé vers la chambre d’ouverture.
+
+### Chambre d’ouverture
+
+- Affichage des boosters achetés et non ouverts.
+- Message avec lien vers la boutique lorsque le stock est vide.
+- Tirage de cinq cartes selon les probabilités du booster.
+- Animation de révélation des cartes.
+- Message spécial selon la meilleure rareté obtenue.
+- Ajout automatique des cartes à la collection.
+- Diminution du stock après ouverture.
+
+### Mon grimoire
+
+- Collection présentée sous la forme d’un livre ancien.
+- Quatre cartes uniques par double page.
+- Navigation entre les pages.
+- Filtres par type et par rareté.
+- Affichage du nombre d’exemplaires.
+- Consultation des détails d’une carte au clic.
+- Ajout d’une carte au deck.
+- Message lorsque la collection est vide.
+
+### Mon deck
+
+- Ajout et retrait de cartes possédées.
+- Limite de 20 cartes.
+- Une seule copie de chaque carte unique.
+- Compteur de cartes sélectionnées.
+- Affichage de l’attaque totale, de la vie totale, du nombre de sorts et de légendaires.
+- Sauvegarde du deck après actualisation.
+
+## Catégories et raretés
+
+Les cartes appartiennent à quatre catégories :
+
+- Serviteurs de la Lumière : héros.
+- Serviteurs des Ténèbres : monstres.
+- Minions : serviteurs.
+- Spells : sorts.
+
+Les raretés disponibles sont :
+
+- Commune.
+- Rare.
+- Épique.
+- Légendaire.
+
+Chaque carte possède un identifiant, un nom, une illustration, une description, un type et une rareté.
+
+Les héros, monstres et minions possèdent des points d’attaque et de vie. Les sorts possèdent un effet spécifique.
+
+## Règles de tirage
+
+La rareté est tirée en premier. Une carte est ensuite choisie aléatoirement parmi celles qui correspondent à cette rareté et aux types autorisés par le booster.
+
+| Booster | Commune | Rare | Épique | Légendaire |
+|---------|---------|------|--------|------------|
+| Beginner Pack | 70 % | 22 % | 7 % | 1 % |
+| Summoning of the Legends | 30 % | 35 % | 25 % | 10 % |
+| Dark Summoning | 50 % | 30 % | 16 % | 4 % |
+| Lucky Pack | 55 % | 25 % | 13 % | 7 % |
+
+Ces probabilités s’appliquent à chaque carte tirée. Les tirages sont indépendants : les doublons sont possibles et aucune légendaire n’est garantie.
+
+Dark Summoning contient uniquement des monstres, des minions et des sorts.
+
+## Organisation des fichiers
+
+| Fichier | Rôle |
+|---------|------|
+| `index.html` | Page d’accueil |
+| `shop.html` | Boutique et panier |
+| `open.html` | Chambre d’ouverture |
+| `grimoire.html` | Collection sous forme de livre |
+| `deck.html` | Création du deck |
+| `script.js` | Menu responsive et icônes |
+| `shop.js` | Panier et validation des commandes |
+| `open.js` | Stock des boosters, tirages et révélation |
+| `grimoire.js` | Filtres et pagination de la collection |
+| `deck.js` | Affichage du deck et statistiques |
+| `cartes.js` | Catalogue de 24 cartes |
+| `jeu.js` | Fonctions communes, sauvegarde et règles du deck |
+| `style.css` | Styles complémentaires et animation |
+
+Les images sont placées dans le même dossier que les pages HTML.
+
+## Lancer le projet
+
+1. Télécharger ou cloner le projet.
+2. Ouvrir le dossier dans Visual Studio Code.
+3. Installer l’extension Live Server si nécessaire.
+4. Faire un clic droit sur `index.html`.
+5. Sélectionner « Open with Live Server ».
+
+Utiliser la même adresse Live Server pour toutes les pages afin de partager les sauvegardes.
+
+Une connexion Internet est nécessaire pour charger Tailwind CSS, les polices et Lucide.
+
+## Sauvegarde des données
+
+Les données sont enregistrées dans LocalStorage :
+
+| Clé | Contenu |
+|-----|---------|
+| `panierMythoria` | Boosters ajoutés au panier |
+| `boostersMythoria` | Boosters achetés et non ouverts |
+| `collectionMythoria` | Identifiants des cartes et nombre d’exemplaires |
+| `deckMythoria` | Identifiants des cartes sélectionnées |
+
+La progression est conservée dans le navigateur utilisé. Elle n’est pas synchronisée entre appareils ou navigateurs.
+
+## Parcours de test
+
+1. Ajouter des boosters au panier.
+2. Modifier les quantités et vérifier le total.
+3. Actualiser la page et vérifier la conservation du panier.
+4. Valider une commande.
+5. Ouvrir un booster et vérifier la diminution du stock.
+6. Consulter les cartes dans le grimoire.
+7. Tester les filtres, la pagination et les détails.
+8. Ajouter puis retirer des cartes du deck.
+9. Vérifier la règle d’une seule copie et la limite de 20 cartes.
+10. Actualiser les pages pour vérifier la sauvegarde.
+11. Vérifier l’affichage sur mobile, tablette et ordinateur.
+
+## Limites de la version actuelle
+
+- Les commandes sont simulées : aucun paiement réel.
+- Il n’existe pas de compte utilisateur ni de serveur de sauvegarde.
+- Certaines illustrations sont réutilisées dans le catalogue de démonstration.
+- Le deck prépare une composition ; aucun système de combat n’est implémenté.
+- Il est préférable d’utiliser un seul onglet de jeu à la fois pour éviter des sauvegardes concurrentes.
