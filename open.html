@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,9 @@
         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
         <script src="https://unpkg.com/lucide@latest"></script>
         <script src="script.js" defer></script>
-        <script src="open.js" defer></script>
+        <script src="cartes.js" defer></script>
+<script src="jeu.js" defer></script>
+<script src="open.js" defer></script>
         <style type="text/tailwindcss">
             @theme {
                 --font-title:"Cinzel",serif;
@@ -17,7 +19,7 @@
             }
         </style>
     </head>
-    <body>
+    <body class="bg-[#0b0712] text-white font-body">
          <header class="relative flex items-center justify-between px-[20px] py-[16px] bg-[#0b0712] ">
 
 
@@ -29,24 +31,12 @@
                     </a>
 
 
-                    <nav
-                    id="menu"
-                    class="font-body hidden absolute top-full left-0 w-full
-                    flex-col gap-5 bg-[#0b0712] p-5 text-white z-50
-                    lg:static lg:flex lg:w-auto lg:flex-row
-                    lg:items-center lg:gap-[32px] lg:p-0">
-                        
-                        <a class="hover:text-[#e9c16d] transition-colors"href="index.html">Accueil</a>
-                        <a class="hover:text-[#e9c16d] transition-colors"href="shop.html">Boutique</a>
-                        <a class="hover:text-[#e9c16d] transition-colors"href="#">Ma collection</a>
-                        <a class="hover:text-[#e9c16d] transition-colors"href="#">Le jeu</a>
-                        <a class="hover:text-[#e9c16d] transition-colors"href="#">A propos</a>
-
-                    </nav>
+                    <nav id="menu" class="font-body hidden absolute top-full left-0 w-full flex-col gap-5 bg-[#0b0712] p-5 text-white z-50 lg:static lg:flex lg:w-auto lg:flex-row lg:items-center lg:gap-6 lg:p-0">
+<a href="index.html">Accueil</a><a href="shop.html">Boutique</a><a href="open.html">Ouverture</a><a href="grimoire.html">Ma collection</a><a href="deck.html">Mon deck</a></nav>
 
                     <div class="flex items-center gap-4 text-white">
 
-                            <a href="#" aria-label="Mon panier">
+                            <a href="shop.html#panier" aria-label="Mon panier">
                                 <i data-lucide="shopping-cart" class="w-[20px] h-[20px] hover:text-[#e9c16d] transition-colors"></i>
                             </a>
 
@@ -67,25 +57,44 @@
             </header>
 
             <main>
-                <section class="text-center bg-[#0b0712]  py-5 px-16">
+                <section class="text-center bg-[#0b0712]  py-5 px-5 md:px-16">
                     <h1 class="font-title text-[#e9c16d] text-3xl md:text-4xl mb-4">LA CHAMBRE D'OUVERTURE </h1>
-                    <p class="font-body text-gray-300">Vos procheines legendes vous attendent</p>
+                    <p class="font-body text-gray-300">Vos prochaines légendes vous attendent.</p>
                 </section> 
-                <section class="py-5 px-16 bg-[#0b0712]">
+                <section class="py-5 px-5 md:px-16 bg-[#0b0712]">
                     <h2 class="font-title text-2xl text-[#e9c16d] text-center md:text-3xl mb-4">MES BOOSTERS</h2>
                     <p class="font-body text-gray-300 text-center mb-8">Choisissez un booster</p>
-                    <div id="listboosters" class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    
-                        <div id="messagevide" class="col-span-full py-10 text-center">
-                            
-                            <p class="text-[#e9c16d] font-title text-xl mb-3">Aucun booster disponible</p>
-                            <p class="text-gray-300 font-body mb-6">rendez-vous dans la boutique pour acheter votre premier booster</p>
+                    <div id="listboosters" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+<div id="messagevide" class="hidden py-10 text-center"><h3 class="font-title text-xl text-[#e9c16d] mb-3">Aucun booster disponible</h3><p class="text-gray-300 mb-6">Rendez-vous dans la boutique pour acheter votre premier booster.</p><a class="bouton" href="shop.html">Découvrir les boosters</a></div>
+</section>
+                <section id="resultat" class="hidden px-5 md:px-10 py-10">
 
-                            <a href="shop.html" class="inline-block bg-[#e9c16d] rounded px-6 py-3 hover:bg-[#f5d995]">Decouvrir les booster</a>
+                    <h2 class="font-title text-2xl text-[#e9c16d] text-center mb-4">
+                        VOTRE INVOCATION
+                    </h2>
 
-                        </div>
-                    
+                    <p
+                        id="messageouverture"
+                        class="text-center text-gray-300 mb-8"
+                        role="status">
+                    </p>
+
+                    <div
+                        id="cartesobtenues"
+                        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
                     </div>
-                </section>   
+
+                    <div class="text-center mt-8">
+
+                        <a
+                            href="grimoire.html"
+                            class="inline-block bg-[#e9c16d] text-[#0b0712] px-6 py-3 rounded">
+                            Ouvrir mon grimoire
+                        </a>
+
+                    </div>
+
+                </section>
             </main>
     </body>
+</html>

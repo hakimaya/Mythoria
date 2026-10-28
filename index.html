@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +16,7 @@
             }
         </style>
     </head>
-    <body>
+    <body class="bg-[#0b0712] text-white font-body">
         <main>
 
             <header class="relative flex items-center justify-between px-[20px] py-[16px] bg-[#0b0712] ">
@@ -30,24 +30,12 @@
                     </a>
 
 
-                    <nav
-                    id="menu"
-                    class="font-body hidden absolute top-full left-0 w-full
-                    flex-col gap-5 bg-[#0b0712] p-5 text-white z-50
-                    lg:static lg:flex lg:w-auto lg:flex-row
-                    lg:items-center lg:gap-[32px] lg:p-0">
-                        
-                        <a class="hover:text-[#e9c16d] transition-colors"href="index.html">Accueil</a>
-                        <a class="hover:text-[#e9c16d] transition-colors"href="shop.html">Boutique</a>
-                        <a class="hover:text-[#e9c16d] transition-colors"href="#">Ma collection</a>
-                        <a class="hover:text-[#e9c16d] transition-colors"href="#">Le jeu</a>
-                        <a class="hover:text-[#e9c16d] transition-colors"href="#">A propos</a>
-
-                    </nav>
+                    <nav id="menu" class="font-body hidden absolute top-full left-0 w-full flex-col gap-5 bg-[#0b0712] p-5 text-white z-50 lg:static lg:flex lg:w-auto lg:flex-row lg:items-center lg:gap-6 lg:p-0">
+<a href="index.html">Accueil</a><a href="shop.html">Boutique</a><a href="open.html">Ouverture</a><a href="grimoire.html">Ma collection</a><a href="deck.html">Mon deck</a></nav>
 
                     <div class="flex items-center gap-4 text-white">
 
-                            <a href="#" aria-label="Mon panier">
+                            <a href="shop.html#panier" aria-label="Mon panier">
                                 <i data-lucide="shopping-cart" class="w-[20px] h-[20px] hover:text-[#e9c16d] transition-colors"></i>
                             </a>
 
@@ -90,7 +78,7 @@
                             h-auto max-w-full">
 
                         
-                        <h2 class="font-title
+                        <h1 class="font-title
                             text-[20px] md:text-[25px] lg:text-[30px]
                             font-semibold
                             bg-gradient-to-b from-[#fff3cf]
@@ -100,7 +88,7 @@
                             DES CARTES, DES LÉGENDES,
                             VOTRE HISTOIRE
 
-                        </h2>
+                        </h1>
 
                         
                         <p class="font-body text-white
@@ -163,22 +151,22 @@
 
                 
                 <div class="text-center">
-                    <img src="BLEU.png" alt="Créatures" class="rounded mb-4">
+                    <div class="illustration"><img src="whitelegend.png" alt="Serviteurs de la Lumière"></div><h3 class="font-title text-[#e9c16d] mt-4">Serviteurs de la Lumière</h3>
                 </div>
 
                 
                 <div class="text-center">
-                    <img src="JAUNE.png" alt="Sorts" class="rounded mb-4">
+                    <div class="illustration"><img src="mauvelegend.png" alt="Serviteurs des Ténèbres"></div><h3 class="font-title text-[#e9c16d] mt-4">Serviteurs des Ténèbres</h3>
                 </div>
 
                 
                 <div class="text-center">
-                    <img src="ORANGE.png" alt="Artefacts" class="rounded mb-4">
+                    <div class="illustration"><img src="violet.png" alt="Minions"></div><h3 class="font-title text-[#e9c16d] mt-4">Minions</h3>
                 </div>
 
                 
                 <div class="text-center">
-                    <img src="VERTE.png" alt="Terrains" class="rounded mb-4">
+                    <div class="illustration"><img src="bluelegend.png" alt="Spells"></div><h3 class="font-title text-[#e9c16d] mt-4">Spells</h3>
                 </div>
 
             </div>
@@ -197,7 +185,7 @@
     </p>
 
     
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
 
         
         <div class="text-center">

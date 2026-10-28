@@ -1,18 +1,3 @@
-
-const menuButton = document.querySelector("#menu-toggle");
-const menu = document.querySelector("#menu");
-
-menuButton.addEventListener("click", function() {
-    menu.classList.toggle("hidden");
-    menu.classList.toggle("flex");
-
-    const isOpen = !menu.classList.contains("hidden");
-
-    menuButton.setAttribute("aria-expanded", String(isOpen));
-});
-
-lucide.createIcons();
-
 const produits = {
     1: { nom: "Beginner Pack", prix: 29 },
     2: { nom: "Summoning of the Legends", prix: 69 },
@@ -21,18 +6,13 @@ const produits = {
 };
 
 
-let panier = JSON.parse(localStorage.getItem("panierMythoria")) || {};
-
-
-function ouvrirMenu() {
-    document.getElementById("menuMobile").classList.toggle("hidden");
-}
+let panier = lireStockage("panierMythoria", {});
 
 
 function ajouterAuPanier(id) {
     let quantite = Number(document.getElementById("quantite" + id).value);
 
-    if (!Number.isInteger(quantite) || quantite < 1) {
+    if (!Number.isInteger(quantite) || quantite < 1 || quantite > 99) {
         alert("Choisissez une quantité valide.");
         return;
     }
@@ -41,13 +21,13 @@ function ajouterAuPanier(id) {
         panier[id] = 0;
     }
 
-    panier[id] = panier[id] + quantite;
+    panier[id] = Math.min(99, panier[id] + quantite);
     afficherPanier();
 }
 
 
 function changerQuantite(id, changement) {
-    panier[id] = panier[id] + changement;
+    panier[id] = Math.min(99, panier[id] + changement);
 
     if (panier[id] <= 0) {
         delete panier[id];
@@ -116,25 +96,27 @@ function afficherPanier() {
     document.getElementById("boutonCommander").classList.toggle("opacity-50", nombreArticles === 0);
 
     
-    localStorage.setItem("panierMythoria", JSON.stringify(panier));
+    enregistrer("panierMythoria", panier);
 }
 
 
 function validerCommande() {
     let total = 0;
     for (let id in panier) {
-        total = total + panier[id] * produits[id].prix;
+        if (produits[id]) total += panier[id] * produits[id].prix;
     }
+    if (total === 0) return;
+    if (!confirm("Confirmer votre commande de " + total + " MAD ?")) return;
 
-    if (total === 0) {
-        return;
+    let achats = lireStockage("boostersMythoria", {});
+    for (let id in panier) {
+        if (!produits[id]) continue;
+        if (!achats[id]) achats[id] = 0;
+        achats[id] += panier[id];
     }
-
-    if (confirm("Confirmer votre commande de " + total + " MAD ?")) {
-        viderPanier();
-        alert("Commande simulée avec succès ! Merci pour votre visite chez Mythoria.");
-    }
+    if (!enregistrer("boostersMythoria", achats)) return;
+    viderPanier();
+    window.location.href = "open.html";
 }
-
 
 afficherPanier();

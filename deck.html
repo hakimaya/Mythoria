@@ -1,0 +1,53 @@
+<!DOCTYPE html><html lang="fr"><head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mythoria — MON DECK</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <script src="https://unpkg.com/lucide@latest"></script>
+        <script src="script.js" defer></script>
+        <script src="cartes.js" defer></script>
+<script src="jeu.js" defer></script>
+<script src="deck.js" defer></script>
+        <style type="text/tailwindcss">
+            @theme {
+                --font-title:"Cinzel",serif;
+                --font-body:"Inter", sans-serif;
+            }
+        </style>
+    </head><body class="bg-[#0b0712] text-white font-body"><header class="relative flex items-center justify-between px-[20px] py-[16px] bg-[#0b0712] ">
+
+
+                    <a href="index.html">
+                        <img 
+                        src="Mythoria, emblème du compas mystique.png" 
+                        alt="mythorialogo" 
+                        class="w-[100px] md:w-[120px] lg:w-[140px] h-auto block">
+                    </a>
+
+
+                    <nav id="menu" class="font-body hidden absolute top-full left-0 w-full flex-col gap-5 bg-[#0b0712] p-5 text-white z-50 lg:static lg:flex lg:w-auto lg:flex-row lg:items-center lg:gap-6 lg:p-0">
+<a href="index.html">Accueil</a><a href="shop.html">Boutique</a><a href="open.html">Ouverture</a><a href="grimoire.html">Ma collection</a><a href="deck.html">Mon deck</a></nav>
+
+                    <div class="flex items-center gap-4 text-white">
+
+                            <a href="shop.html#panier" aria-label="Mon panier">
+                                <i data-lucide="shopping-cart" class="w-[20px] h-[20px] hover:text-[#e9c16d] transition-colors"></i>
+                            </a>
+
+                            <button
+                            id="menu-toggle"
+                            type="button"
+                            aria-label="Ouvrir le menu"
+                            aria-controls="menu"
+                            aria-expanded="false"
+                            class="lg:hidden text-[#e9c16d] text-[28px] cursor-pointer"
+                            >
+                            ☰
+                            </button>
+
+                    </div>
+
+
+            </header><main class="px-5 md:px-10 py-10 max-w-7xl mx-auto"><h1 class="font-title text-3xl md:text-4xl text-[#e9c16d] text-center mb-10">MON DECK</h1><p class="text-center mb-6">20 cartes maximum · Une seule copie de chaque carte unique.</p><div class="p-5 bg-[#191321] rounded mb-8"><h2 id="compteurdeck" class="text-xl font-title text-[#e9c16d]"></h2><p id="statsdeck" class="mt-3"></p></div><h2 class="font-title text-xl text-[#e9c16d] mb-5">Cartes sélectionnées</h2><div id="listedeck" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10"></div><h2 class="font-title text-xl text-[#e9c16d] mb-5">Cartes disponibles</h2><div id="disponibles" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"></div></main><footer class="p-6 border-t border-[#493822] text-gray-400 text-center mt-10"><p class="font-title text-[#e9c16d]">MYTHORIA</p><p>Collectionnez. Écrivez votre légende.</p><p class="text-sm mt-3">© 2026 Mythoria · Projet pédagogique</p></footer></body></html>

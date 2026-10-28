@@ -14,7 +14,10 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 
 
-    <script src="shop.js" defer></script>
+    <script src="script.js" defer></script>
+<script src="cartes.js" defer></script>
+<script src="jeu.js" defer></script>
+<script src="shop.js" defer></script>
 
     <style type="text/tailwindcss">
         @theme {
@@ -22,7 +25,7 @@
             --font-body: "Inter", sans-serif;
         }
     </style>
-</head>
+<link rel="stylesheet" href="style.css"></head>
 <body class="bg-[#0b0712] text-white font-body">
 
     <header class="relative flex items-center justify-between px-[20px] py-[16px] bg-[#0b0712] ">
@@ -36,20 +39,8 @@
                     </a>
 
 
-                    <nav
-                    id="menu"
-                    class="font-body hidden absolute top-full left-0 w-full
-                    flex-col gap-5 bg-[#0b0712] p-5 text-white z-50
-                    lg:static lg:flex lg:w-auto lg:flex-row
-                    lg:items-center lg:gap-[32px] lg:p-0">
-                        
-                        <a class="hover:text-[#e9c16d] transition-colors"href="index.html">Accueil</a>
-                        <a class="hover:text-[#e9c16d] transition-colors"href="shop.html">Boutique</a>
-                        <a class="hover:text-[#e9c16d] transition-colors"href="#">Ma collection</a>
-                        <a class="hover:text-[#e9c16d] transition-colors"href="#">Le jeu</a>
-                        <a class="hover:text-[#e9c16d] transition-colors"href="#">A propos</a>
-
-                    </nav>
+                    <nav id="menu" class="font-body hidden absolute top-full left-0 w-full flex-col gap-5 bg-[#0b0712] p-5 text-white z-50 lg:static lg:flex lg:w-auto lg:flex-row lg:items-center lg:gap-6 lg:p-0">
+<a href="index.html">Accueil</a><a href="shop.html">Boutique</a><a href="open.html">Ouverture</a><a href="grimoire.html">Ma collection</a><a href="deck.html">Mon deck</a></nav>
 
                     <div class="flex items-center gap-4 text-white">
 
@@ -110,7 +101,7 @@
                         <h3 class="font-title text-lg text-[#e9c16d] mb-3">Beginner Pack</h3>
                         <p class="text-sm text-gray-300 mb-3">Un pack conçu pour les nouveaux joueurs avec des cartes communes et quelques cartes plus rares.</p>
                         <p class="text-sm text-gray-200 mb-2"><strong>5 cartes</strong> par booster</p>
-                        <p class="text-xs text-gray-400 mb-4">Catégories : Créatures, Sorts, Artefacts et Terrains</p>
+                        <p class="text-xs text-gray-400 mb-4">Catégories : Héros, Monstres, Minions et Spells</p>
                         <p class="text-2xl font-bold text-[#f1d18d] mb-4">29 MAD</p>
                         <div class="mt-auto">
                             <label for="quantite1" class="block text-sm mb-2">Quantité</label>
@@ -143,7 +134,7 @@
                         <h3 class="font-title text-lg text-[#e9c16d] mb-3">Dark Summoning</h3>
                         <p class="text-sm text-gray-300 mb-3">Un booster dédié aux monstres, aux serviteurs des Ténèbres et aux sorts interdits.</p>
                         <p class="text-sm text-gray-200 mb-2"><strong>5 cartes</strong> par booster</p>
-                        <p class="text-xs text-gray-400 mb-4">Catégories : Créatures des Ténèbres et Sorts obscurs</p>
+                        <p class="text-xs text-gray-400 mb-4">Catégories : Monstres, Minions et Sorts obscurs</p>
                         <p class="text-2xl font-bold text-[#f1d18d] mb-4">49 MAD</p>
                         <div class="mt-auto">
                             <label for="quantite3" class="block text-sm mb-2">Quantité</label>

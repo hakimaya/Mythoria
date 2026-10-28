@@ -1,12 +1,12 @@
-const menubutton = document.querySelector("#menu-toggle");
-//menu button ka tkhlina nwslo ldak element html li fih id menu-toggle
-const menu=document.queryselector("#menu");
-//lmenu li ayban 
-menubutton.addEventListener("click",function(){
-    menu.classList.toggle("hidden");
-    menu.classList.toggle("flex");
+const menuButton = document.querySelector("#menu-toggle");
+const menu = document.querySelector("#menu");
 
-    const isopen = !menu.classList.contains("hidden");
-    menubutton.setAttribute("aria-expanded",String(isOpen))
-})
-lucide.createIcons();
+if (menuButton && menu) {
+    menuButton.addEventListener("click", function () {
+        menu.classList.toggle("hidden");
+        menu.classList.toggle("flex");
+        let ouvert = !menu.classList.contains("hidden");
+        menuButton.setAttribute("aria-expanded", String(ouvert));
+    });
+}
+if (window.lucide) lucide.createIcons();

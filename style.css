@@ -1,0 +1,22 @@
+/* Petits compléments à Tailwind : cartes, livre et animation. */
+body { margin:0; }
+button,a,input,select { -webkit-tap-highlight-color:transparent; }
+button { cursor:pointer; }
+button:disabled { opacity:.45; cursor:not-allowed; }
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible { outline:3px solid #e9c16d; outline-offset:4px; }
+.bouton { display:inline-block; background:#e9c16d; color:#0b0712; padding:12px 20px; border-radius:4px; text-align:center; }
+.bouton:hover:not(:disabled) { background:#f5d995; }
+.carte { background:#191321; color:#eee7f3; border:1px solid #675b70; border-radius:6px; overflow:hidden; }
+.inspecter { display:block; width:100%; text-align:left; }
+.illustration { display:block; position:relative; height:220px; overflow:hidden; background:#0b0712; }
+.illustration img { position:absolute; width:100%; height:auto; min-height:100%; object-fit:cover; top:0; left:0; }
+.rare { border-color:#78b9f3; }.epique { border-color:#c494ee; }.legendaire { border-color:#e9c16d; box-shadow:0 0 16px #e9c16d30; }
+.rare .rarete { color:#78b9f3; }.epique .rarete { color:#c494ee; }.legendaire .rarete { color:#e9c16d; }
+.livre { background:linear-gradient(90deg,#cbb083,#ecdcb8 48%,#a17d50 50%,#ecdcb8 52%,#cbb083); border:10px solid #4c3027; border-radius:14px; color:#402b1c; padding:25px; box-shadow:0 12px 30px #0006; }
+select { display:block; background:#191321; color:white; padding:10px; border:1px solid #806437; border-radius:4px; margin-top:8px; }
+dialog { background:#191321; color:white; border:1px solid #e9c16d; border-radius:8px; padding:24px; width:min(440px,calc(100% - 32px)); max-height:90vh; overflow:auto; }
+dialog::backdrop { background:#000b; }
+.carte-revelee { animation:apparition .6s both; }
+@keyframes apparition { from { opacity:0; transform:translateY(25px) rotateY(60deg); } to { opacity:1; transform:none; } }
+@media(max-width:639px) { .livre { padding:16px; border-width:6px; background:#e7d2a8; } .livre .carte { max-width:300px; margin:auto; width:100%; } }
+@media(prefers-reduced-motion:reduce) { .carte-revelee { animation:none; } }
