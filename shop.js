@@ -1,3 +1,4 @@
+
 const produits = {
     1: { nom: "Beginner Pack", prix: 29 },
     2: { nom: "Summoning of the Legends", prix: 69 },
@@ -7,10 +8,9 @@ const produits = {
 
 
 let panier = lireStockage("panierMythoria", {});
-
-
 function ajouterAuPanier(id) {
-    let quantite = Number(document.getElementById("quantite" + id).value);
+    let champQuantite = document.getElementById("quantite" + id);
+    let quantite = Number(champQuantite.value);
 
     if (!Number.isInteger(quantite) || quantite < 1 || quantite > 99) {
         alert("Choisissez une quantité valide.");
@@ -21,13 +21,17 @@ function ajouterAuPanier(id) {
         panier[id] = 0;
     }
 
-    panier[id] = Math.min(99, panier[id] + quantite);
+    panier[id] = panier[id] + quantite;
+    if (panier[id] > 99) {
+        panier[id] = 99;
+    }
     afficherPanier();
 }
-
-
 function changerQuantite(id, changement) {
-    panier[id] = Math.min(99, panier[id] + changement);
+    panier[id] = panier[id] + changement;
+    if (panier[id] > 99) {
+        panier[id] = 99;
+    }
 
     if (panier[id] <= 0) {
         delete panier[id];
@@ -48,8 +52,6 @@ function viderPanier() {
     panier = {};
     afficherPanier();
 }
-
-
 function afficherPanier() {
     let contenu = "";
     let total = 0;
@@ -92,29 +94,47 @@ function afficherPanier() {
     if (compteur) {
         compteur.textContent = nombreArticles;
     }
-    document.getElementById("boutonCommander").disabled = nombreArticles === 0;
-    document.getElementById("boutonCommander").classList.toggle("opacity-50", nombreArticles === 0);
+    let boutonCommander = document.getElementById("boutonCommander");
+    if (nombreArticles === 0) {
+        boutonCommander.disabled = true;
+        boutonCommander.classList.add("opacity-50");
+    } else {
+        boutonCommander.disabled = false;
+        boutonCommander.classList.remove("opacity-50");
+    }
 
     
     enregistrer("panierMythoria", panier);
 }
-
-
 function validerCommande() {
     let total = 0;
     for (let id in panier) {
-        if (produits[id]) total += panier[id] * produits[id].prix;
+        if (produits[id]) {
+            total = total + panier[id] * produits[id].prix;
+        }
     }
-    if (total === 0) return;
-    if (!confirm("Confirmer votre commande de " + total + " MAD ?")) return;
+    if (total === 0) {
+        return;
+    }
+    let confirmation = confirm("Confirmer votre commande de " + total + " MAD ?");
+    if (confirmation === false) {
+        return;
+    }
 
     let achats = lireStockage("boostersMythoria", {});
     for (let id in panier) {
-        if (!produits[id]) continue;
-        if (!achats[id]) achats[id] = 0;
-        achats[id] += panier[id];
+        if (!produits[id]) {
+            continue;
+        }
+        if (!achats[id]) {
+            achats[id] = 0;
+        }
+        achats[id] = achats[id] + panier[id];
     }
-    if (!enregistrer("boostersMythoria", achats)) return;
+    let sauvegarde = enregistrer("boostersMythoria", achats);
+    if (sauvegarde === false) {
+        return;
+    }
     viderPanier();
     window.location.href = "open.html";
 }

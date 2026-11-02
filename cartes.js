@@ -1,4 +1,3 @@
-// Catalogue de démonstration : remplacer les images ici pour personnaliser les cartes.
 const cartes = [
     {
         "id": 1,

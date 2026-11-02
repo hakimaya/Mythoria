@@ -1,4 +1,3 @@
-/* Petits compléments à Tailwind : cartes, livre et animation. */
 body { margin:0; }
 button,a,input,select { -webkit-tap-highlight-color:transparent; }
 button { cursor:pointer; }
@@ -9,7 +8,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible { 
 .carte { background:#191321; color:#eee7f3; border:1px solid #675b70; border-radius:6px; overflow:hidden; }
 .inspecter { display:block; width:100%; text-align:left; }
 .illustration { display:block; position:relative; height:220px; overflow:hidden; background:#0b0712; }
-.illustration img { position:absolute; width:100%; height:auto; min-height:100%; object-fit:cover; top:0; left:0; }
+.illustration img { display:block; width:100%; height:100%; object-fit:contain; }
 .rare { border-color:#78b9f3; }.epique { border-color:#c494ee; }.legendaire { border-color:#e9c16d; box-shadow:0 0 16px #e9c16d30; }
 .rare .rarete { color:#78b9f3; }.epique .rarete { color:#c494ee; }.legendaire .rarete { color:#e9c16d; }
 .livre { background:linear-gradient(90deg,#cbb083,#ecdcb8 48%,#a17d50 50%,#ecdcb8 52%,#cbb083); border:10px solid #4c3027; border-radius:14px; color:#402b1c; padding:25px; box-shadow:0 12px 30px #0006; }

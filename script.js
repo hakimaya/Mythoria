@@ -1,3 +1,4 @@
+
 const menuButton = document.querySelector("#menu-toggle");
 const menu = document.querySelector("#menu");
 
@@ -9,4 +10,6 @@ if (menuButton && menu) {
         menuButton.setAttribute("aria-expanded", String(ouvert));
     });
 }
-if (window.lucide) lucide.createIcons();
+if (window.lucide) {
+    lucide.createIcons();
+}
