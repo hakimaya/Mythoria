@@ -1,5 +1,5 @@
 MYTHORIA — MODE D’EMPLOI
-
+https://hakimaya630.atlassian.net/jira/software/projects/KAN/boards/1?filter=&groupBy=none
 Copier tous les fichiers de ce dossier dans le dossier du projet.
 Ouvrir index.html avec Live Server dans VS Code.
 Utiliser la même adresse Live Server pour toutes les pages.
